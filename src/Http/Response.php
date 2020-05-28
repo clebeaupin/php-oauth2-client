@@ -129,9 +129,9 @@ class Response
      */
     public function json()
     {
-        if (!$this->isJson()) {
-            throw new ResponseException('response MUST have JSON content type');
-        }
+        // if (!$this->isJson()) {
+        //     throw new ResponseException('response MUST have JSON content type');
+        // }
 
         return Json::decode($this->responseBody);
     }
