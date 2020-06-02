@@ -50,11 +50,11 @@ class OAuthClient
     /** @var Http\HttpClientInterface */
     private $httpClient;
 
-    public function __construct(TokenStorageInterface $tokenStorage, HttpClientInterface $httpClient)
+    public function __construct(TokenStorageInterface $tokenStorage, HttpClientInterface $httpClient, SessionInterface $session)
     {
         $this->tokenStorage = $tokenStorage;
         $this->httpClient = $httpClient;
-        $this->session = new Session();
+        $this->session = $session;
         $this->random = new Random();
         $this->dateTime = new DateTime();
     }
